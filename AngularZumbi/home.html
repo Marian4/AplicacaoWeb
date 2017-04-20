@@ -1,0 +1,23 @@
+<div ng-controller="controller">
+	<table ng-if="ocorrencias.length > 0" class="table">
+		<thead>
+			<th>nome</th>
+			<th>cep</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="ocorrencia in ocorrencias">
+				<td>{{ocorrencia.nome|upper}}</td>
+				<td>{{ocorrencia.cep}}</td>
+			</tr>
+		</tbody>
+	</table><br>
+	<form name='dados'>
+		<label>nome</label>
+		<input ng-model="ocorrencia.nome" ng-blur required type="text" ng-minlength='3' name="nome" class="form-control">
+		<label>cep</label>
+		<input type="text" ng-blur ng-model="ocorrencia.cep" ng-pattern="/^[0-9]{5}-[0-9]{3}$/" required name="cep" class="form-control"><br>
+		<ng-verifica-submit submit="adiciona(ocorrencia)"></ng-verifica-submit>
+		<!--<button ng-click="adiciona(ocorrencia)" ng-disabled="dados.$invalid" type="submit" class="btn btn-primary">enviar</button>-->
+		<!--tirar o ng-disabled e colocar a condição de está válido na função adiciona(validação de controllers)-->
+	</form>
+</div>

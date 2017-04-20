@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+    <head>
+        <title>
+            Minha aplicação Zumbi
+        </title>
+
+        <!-- Angular -->
+        <script src="js/lib/angular.min.js"></script>
+        <script src="js/lib/angular-route.min.js"></script>
+        <script src="js/lib/angular-ui-router.min.js"></script>
+        <script src="js/lib/angular-sanitize.min.js"></script>
+        <script src="js/lib/angular-animate.min.js"></script>
+        <script src="js/lib/angular-aria.min.js"></script>
+        <script src="js/lib/filters.js"></script>
+
+
+        <!-- JQuery -->
+        <script src="js/lib/jquery.min.js"></script>
+
+        <!-- Bootstrap -->
+        <script src="js/lib/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- Tether - Dependência obrigatória do Bootstrap -->
+        <script src="js/lib/tether.min.js"></script>
+        <link rel="stylesheet" href="css/tether.min.css">
+
+        <!-- Angular App -->
+        <script src="js/app.js"></script>
+        <script src="js/controllers/controllerApp.js"></script>
+        <script src="js/lib/directives.js"></script>
+
+        <!-- Rota -->
+        <script src="js/router/router.js"></script>
+        <style type="text/css">
+        .error{
+            border-color:red
+        }
+        </style>
+    </head>
+
+    <body ng-cloak>
+        <div class="well">
+            <h1>Pessoas</h1>
+        </div>
+
+        <div ng-view>
+            
+        </div>
+    </body>
+    
+</html>
