@@ -17,8 +17,5 @@
 		<label>cep</label>
 		<input type="text" ng-blur ng-model="ocorrencia.cep" ng-informa-cep required name="cep" class="form-control"><br>
 		<ng-verifica-submit submit="adiciona(ocorrencia)"></ng-verifica-submit>
-		<!--<button ng-click="adiciona(ocorrencia)" ng-disabled="dados.$invalid" type="submit" class="btn btn-primary">enviar</button>-->
-		<!--tirar o ng-disabled e colocar a condição de está válido na função adiciona(validação de controllers)-->
 	</form>
 </div>
-<!--ng-pattern="/^[0-9]{5}-[0-9]{3}$/"-->
