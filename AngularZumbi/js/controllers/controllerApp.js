@@ -1,4 +1,7 @@
-app.controller("controller", function($scope){
+app.controller("controller", function($scope,$rootScope){
+			$rootScope.$on('cep',function(event,data){
+				$scope.ocorrencia.bairro = data.bairro
+			});
 			$scope.ocorrencias = [];
 			$scope.adiciona=function(ocorrencia){
 				$scope.ocorrencias.push(angular.copy(ocorrencia));

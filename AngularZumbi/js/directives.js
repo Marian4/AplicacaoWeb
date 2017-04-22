@@ -34,7 +34,7 @@ app.directive('ngBlur', function() {
         }
     }   
 });
-app.directive('ngInformaCep',function($http){
+app.directive('ngInformaCep',function(CepService,$rootScope){
     return {
         restrict: 'A',
         require: 'ngModel',
@@ -42,9 +42,10 @@ app.directive('ngInformaCep',function($http){
             $scope.$watch($attrs.ngModel, function(value) {
                 if (value) {
                     if (value.match(/^[0-9]{5}-[0-9]{3}$/)) {
-                        $http.get('http://api.postmon.com.br/v1/cep/' + value).then(function(response) {
+                        CepService.get(value).then(function(response) {
                             console.log(response);
                             ngModel.$setValidity($attrs.ngModel, true);
+                            $rootScope.$broadcast('cep', response.data);
                         });
                     }
                     else {
