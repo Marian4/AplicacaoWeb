@@ -41,7 +41,7 @@ app.directive('ngInformaCep',function(CepService,$rootScope){
         link: function($scope, $element, $attrs, ngModel) {
             $scope.$watch($attrs.ngModel, function(value) {
                 if (value) {
-                    if (value.match(/^[0-9]{5}-[0-9]{3}$/)) {
+                    if (value.match(/^[0-9]{5}-[0-9]{3}$/ || /^[0-9]{8}$/)) {
                         CepService.get(value).then(function(response) {
                             console.log(response);
                             ngModel.$setValidity($attrs.ngModel, true);
